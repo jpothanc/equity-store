@@ -1,0 +1,31 @@
+{
+ "stocks": [
+    {
+      "ric_code": "0005.HK",
+      "exchange": "HKG",
+      "close_price": 500,
+      "open_price": 600,
+      "lot_size": 100,
+      "currency": "HKD",
+      "last_updated": "2019-01-01T00:00:00Z"
+    },
+    {
+      "ric_code": "0006.HK",
+      "exchange": "HKG",
+      "close_price": 600,
+      "open_price": 700,
+      "lot_size": 100,
+      "currency": "HKD",
+      "last_updated": "2019-01-01T00:00:00Z"
+    },
+    {
+        "ric_code": "0007.HK",
+        "exchange": "HKG",
+        "close_price": 700,
+        "open_price": 800,
+        "lot_size": 100,
+        "currency": "HKD",
+        "last_updated": "2019-01-01T00:00:00Z"
+     }
+  ]
+}

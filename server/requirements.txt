@@ -1,0 +1,4 @@
+Flask==2.03
+Flask-Injector==0.15.0
+Flask-Cors==3.0.10
+injector~=0.21.02.3

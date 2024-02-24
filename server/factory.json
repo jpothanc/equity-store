@@ -1,0 +1,14 @@
+{
+  "bindings": [
+    {
+      "service": "EquityService",
+      "implementation": "EquityService",
+      "scope": "singleton"
+    },
+    {
+      "service": "StockRepository",
+      "implementation": "StockRepositoryDB",
+      "scope": "singleton"
+    }
+  ]
+}
