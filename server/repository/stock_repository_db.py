@@ -3,6 +3,12 @@ from repository.stock_repository import StockRepository
 
 
 class StockRepositoryDB(StockRepository):
+    def get_exchange(self, exchange):
+        pass
+
+    def load_exchange(self, exchange):
+        pass
+
     def __init__(self):
         pass
 

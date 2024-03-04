@@ -7,7 +7,7 @@
     },
     {
       "service": "StockRepository",
-      "implementation": "StockRepositoryDB",
+      "implementation": "StockRepositoryDisk",
       "scope": "singleton"
     }
   ]

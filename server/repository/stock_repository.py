@@ -3,6 +3,12 @@ from abc import abstractmethod
 
 class StockRepository:
     def __init__(self):
+        self.cache_exchange = {}
+        self.cache_stock_code = {}
+        pass
+
+    @abstractmethod
+    def load_exchange(self, exchange):
         pass
 
     @abstractmethod
@@ -10,6 +16,6 @@ class StockRepository:
         raise NotImplementedError
 
     @abstractmethod
-    def get_stocks(self):
+    def get_exchange(self, exchange):
         raise NotImplementedError
 

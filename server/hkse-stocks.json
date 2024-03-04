@@ -1,0 +1,92 @@
+[
+  {
+    "stock_name": "CK Hutchison Holdings",
+    "product_code": "0001.HK",
+    "lot_size": 500,
+    "last_close_price": 5635,
+    "currency": "HKD",
+    "20_day_average_volume": 2000000,
+    "30_day_average_volume": 2500000
+  },
+  {
+    "stock_name": "CLP Holdings Limited",
+    "product_code": "0002.HK",
+    "lot_size": 1000,
+    "last_close_price": 7520,
+    "currency": "HKD",
+    "20_day_average_volume": 1500000,
+    "30_day_average_volume": 1800000
+  },
+  {
+    "stock_name": "The Hong Kong and China Gas Company Limited",
+    "product_code": "0003.HK",
+    "lot_size": 500,
+    "last_close_price": 1288,
+    "currency": "HKD",
+    "20_day_average_volume": 2500000,
+    "30_day_average_volume": 3000000
+  },
+  {
+    "stock_name": "The Wharf (Holdings) Limited",
+    "product_code": "0004.HK",
+    "lot_size": 500,
+    "last_close_price": 1850,
+    "currency": "HKD",
+    "20_day_average_volume": 1200000,
+    "30_day_average_volume": 1500000
+  },
+  {
+    "stock_name": "HSBC Holdings plc",
+    "product_code": "0005.HK",
+    "lot_size": 400,
+    "last_close_price": 4255,
+    "currency": "HKD",
+    "20_day_average_volume": 3000000,
+    "30_day_average_volume": 3500000
+  },
+  {
+    "stock_name": "Power Assets Holdings Limited",
+    "product_code": "0006.HK",
+    "lot_size": 500,
+    "last_close_price": 5310,
+    "currency": "HKD",
+    "20_day_average_volume": 1000000,
+    "30_day_average_volume": 1200000
+  },
+  {
+    "stock_name": "Hong Kong Finance Investment Holding Group Limited",
+    "product_code": "0007.HK",
+    "lot_size": 1000,
+    "last_close_price": 82,
+    "currency": "HKD",
+    "20_day_average_volume": 500000,
+    "30_day_average_volume": 600000
+  },
+  {
+    "stock_name": "PCCW Limited",
+    "product_code": "0008.HK",
+    "lot_size": 500,
+    "last_close_price": 467,
+    "currency": "HKD",
+    "20_day_average_volume": 1800000,
+    "30_day_average_volume": 2000000
+  },
+  {
+    "stock_name": "Nine Express Limited",
+    "product_code": "0009.HK",
+    "lot_size": 1000,
+    "last_close_price": 95,
+    "currency": "HKD",
+    "20_day_average_volume": 400000,
+    "30_day_average_volume": 450000
+  },
+  {
+    "stock_name": "Hang Lung Group",
+    "product_code": "0010.HK",
+    "lot_size": 500,
+    "last_close_price": 1734,
+    "currency": "HKD",
+    "20_day_average_volume": 2200000,
+    "30_day_average_volume": 2700000
+  }
+]
