@@ -1,5 +1,10 @@
 {
   "bindings": [
+     {
+      "service": "EncryptionService",
+      "implementation": "EncryptionService",
+      "scope": "singleton"
+    },
     {
       "service": "EquityService",
       "implementation": "EquityService",
@@ -12,9 +17,8 @@
     },
     {
       "service": "StockRepository",
-      "implementation": "StockRepositoryDisk",
+      "implementation": "StockRepositoryDB",
       "scope": "singleton"
     }
-
   ]
 }

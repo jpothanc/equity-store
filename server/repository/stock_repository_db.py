@@ -1,15 +1,8 @@
-import json
-from dataclasses import asdict
-
 from injector import inject, Injector
-
 from config.config_provider import ConfigProvider
-from config.custom_encoder import CustomEncoder
 from models.stock_info import StockInfo
 from repository.stock_repository import StockRepository
 from services.database_service import DatabaseService
-from services.db_postgres_service import DbPostgresService
-
 
 class StockRepositoryDB(StockRepository):
     @inject
@@ -20,8 +13,9 @@ class StockRepositoryDB(StockRepository):
 
 
     def load_exchange(self, exchange):
-        connection_string =  self.config_provider.data["db"]["connection_string"]
-        col_names, rows = self.database_service.query(connection_string, f"SELECT stock_name, primary_exchange, product_code, lot_size,  currency, day_20_average_volume, day_30_average_volume FROM equity WHERE primary_exchange = '{exchange}'", )
+        connection_string =  self.config_provider.get_connection_string(self.config_provider.get("data_source"))
+        query = self.config_provider.get("exchange_query").format(exchange = exchange)
+        col_names, rows = self.database_service.query(connection_string, query)
 
         stocks = [
             StockInfo(*row)  # Unpack each row directly into the StockInfo constructor

@@ -4,3 +4,4 @@ from repository.stock_repository_db import StockRepositoryDB
 from services.equity_service import EquityService
 from services.database_service import DatabaseService
 from services.db_postgres_service import DbPostgresService
+from services.encryption_service import EncryptionService

@@ -1,10 +1,13 @@
 import psycopg2
+from injector import Injector
+
 from services.database_service import DatabaseService
 
 
+
 class DbPostgresService(DatabaseService):
-    def __init__(self):
-        pass
+
+
     def query(self, connection_string, query):
         with psycopg2.connect(connection_string) as conn:
             with conn.cursor() as cur:

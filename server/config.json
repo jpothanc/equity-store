@@ -1,7 +1,16 @@
 {
     "port": 5001,
-    "disk_data": "stocks.json",
-    "db": {
-        "connection_string": "postgresql://jpothanc:Z2UXaMsCO3HV@ep-white-forest-89963536.ap-southeast-1.aws.neon.tech/productstore"
+    "preload_exchanges": "HKSE,TSE",
+    "data_source": "neon",
+    "exchange_query": "SELECT stock_name, primary_exchange, product_code, lot_size,  currency, day_20_average_volume, day_30_average_volume FROM equity WHERE primary_exchange = '{exchange}'",
+
+    "data_sources": {
+        "neon":{
+            "connection_string": "postgresql://{username}:{password}@{host}/{database}",
+            "host": "ep-white-forest-89963536.ap-southeast-1.aws.neon.tech",
+            "database": "productstore",
+            "username": "jpothanc",
+            "password": "gAAAAABl8XCDdhLwMjluq5DuNHXtfUboIDGkzgr9oYdaPRdwy-TtnFIZs_XHNyLwiQVA5s8YyMY_uzKOb7MxRVDoGv9zW7mBsQ=="
+        }
     }
 }

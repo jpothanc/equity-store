@@ -4,3 +4,5 @@ Flask-Cors==3.0.10
 injector~=0.21.0
 pydantic~=2.6.4
 psycopg2~=2.9.9
+
+cryptography~=42.0.5
