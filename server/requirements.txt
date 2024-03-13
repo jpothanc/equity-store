@@ -1,4 +1,6 @@
-Flask==2.03
+Flask~=3.0.2
 Flask-Injector==0.15.0
 Flask-Cors==3.0.10
-injector~=0.21.02.3
+injector~=0.21.0
+pydantic~=2.6.4
+psycopg2~=2.9.9

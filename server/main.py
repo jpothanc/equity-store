@@ -2,13 +2,14 @@ import json
 import logging
 
 from flask import Flask, session, g
-from flask_injector import FlaskInjector
+from flask_injector import FlaskInjector, request
 from injector import singleton
 from config.config_provider import ConfigProvider
 from config.constants import FACTORY_FILE, CONFIG_FILE
-from controllers.app_controller import app_api
+from controllers import error_handlers
 from controllers.equity_controller import eq_ns
-from imports import EquityService, StockRepositoryDisk, StockRepository, StockRepositoryDB
+from controllers.health_controller import health_bp
+from imports import EquityService, StockRepositoryDisk, StockRepository, StockRepositoryDB, DatabaseService, DbPostgresService
 from flask_restx import Api, Resource
 def configure(binder):
     try:
@@ -42,6 +43,12 @@ def init_logging():
             logging.FileHandler("equity-store.log"),
             logging.StreamHandler()])
 
+def register_blueprints():
+    app.register_blueprint(health_bp)
+def register_error_handlers():
+    app.register_error_handler(404, error_handlers.not_found)
+    app.register_error_handler(500, error_handlers.internal_server_error)
+
 @app.before_request
 def before_request():
     g.flask_injector = flask_injector
@@ -51,6 +58,8 @@ if __name__ == '__main__':
     init_logging()
     config_provider =  flask_injector.injector.get(ConfigProvider)
     equity_service = flask_injector.injector.get(EquityService)
+    register_error_handlers()
+    register_blueprints()
     equity_service.load_exchanges()
     port = config_provider.get('port') or 8001
     print(port)

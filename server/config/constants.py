@@ -1,2 +1,2 @@
-FACTORY_FILE = 'factory.json'
-CONFIG_FILE = 'config.json'
+FACTORY_FILE = "factory.json"
+CONFIG_FILE = "config.json"

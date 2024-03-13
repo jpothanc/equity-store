@@ -1,4 +1,7 @@
 {
     "port": 5001,
-    "disk_data": "stocks.json"
+    "disk_data": "stocks.json",
+    "db": {
+        "connection_string": "postgresql://jpothanc:Z2UXaMsCO3HV@ep-white-forest-89963536.ap-southeast-1.aws.neon.tech/productstore"
+    }
 }

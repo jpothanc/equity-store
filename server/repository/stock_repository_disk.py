@@ -12,7 +12,7 @@ class StockRepositoryDisk(StockRepository):
         self.config_provider = injector.get(ConfigProvider)
 
     def load_exchange(self, exchange):
-        file_path = f"{exchange}-stocks.json".lower()
+        file_path = f"data\\{exchange}-stocks.json".lower()
         try:
             with open(file_path, 'r') as file:
                 stocks = json.load(file)

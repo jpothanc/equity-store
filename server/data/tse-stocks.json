@@ -1,90 +1,100 @@
 [
   {
     "stock_name": "Toyota Motor Corp",
+    "primary_exchange": "TSE",
     "product_code": "7203.T",
     "lot_size": 100,
-    "last_close_price": 8000,
+    "close_price": 8000,
     "currency": "JPY",
     "20_day_average_volume": 5000000,
     "30_day_average_volume": 5500000
   },
   {
     "stock_name": "Sony Group Corp",
+    "primary_exchange": "TSE",
     "product_code": "6758.T",
     "lot_size": 100,
-    "last_close_price": 11000,
+    "close_price": 11000,
     "currency": "JPY",
     "20_day_average_volume": 3000000,
     "30_day_average_volume": 3200000
   },
   {
     "stock_name": "SoftBank Group Corp",
+    "primary_exchange": "TSE",
     "product_code": "9984.T",
     "lot_size": 100,
-    "last_close_price": 7000,
+    "close_price": 7000,
     "currency": "JPY",
     "20_day_average_volume": 4000000,
     "30_day_average_volume": 4200000
   },
   {
     "stock_name": "Nintendo Co Ltd",
+    "primary_exchange": "TSE",
     "product_code": "7974.T",
     "lot_size": 100,
-    "last_close_price": 50000,
+    "close_price": 50000,
     "currency": "JPY",
     "20_day_average_volume": 2500000,
     "30_day_average_volume": 2600000
   },
   {
     "stock_name": "Mitsubishi UFJ Financial Group",
+    "primary_exchange": "TSE",
     "product_code": "8306.T",
     "lot_size": 100,
-    "last_close_price": 600,
+    "close_price": 600,
     "currency": "JPY",
     "20_day_average_volume": 8000000,
     "30_day_average_volume": 8500000
   },
   {
     "stock_name": "Nippon Telegraph and Telephone Corp",
+    "primary_exchange": "TSE",
     "product_code": "9432.T",
     "lot_size": 100,
-    "last_close_price": 3000,
+    "close_price": 3000,
     "currency": "JPY",
     "20_day_average_volume": 2000000,
     "30_day_average_volume": 2200000
   },
   {
     "stock_name": "Keyence Corp",
+    "primary_exchange": "TSE",
     "product_code": "6861.T",
     "lot_size": 100,
-    "last_close_price": 60000,
+    "close_price": 60000,
     "currency": "JPY",
     "20_day_average_volume": 1000000,
     "30_day_average_volume": 1050000
   },
   {
     "stock_name": "Fast Retailing Co Ltd",
+    "primary_exchange": "TSE",
     "product_code": "9983.T",
     "lot_size": 100,
-    "last_close_price": 88000,
+    "close_price": 88000,
     "currency": "JPY",
     "20_day_average_volume": 500000,
     "30_day_average_volume": 550000
   },
   {
     "stock_name": "Tokyo Electron Ltd",
+    "primary_exchange": "TSE",
     "product_code": "8035.T",
     "lot_size": 100,
-    "last_close_price": 42000,
+    "close_price": 42000,
     "currency": "JPY",
     "20_day_average_volume": 1500000,
     "30_day_average_volume": 1600000
   },
   {
     "stock_name": "Recruit Holdings Co Ltd",
+    "primary_exchange": "TSE",
     "product_code": "6098.T",
     "lot_size": 100,
-    "last_close_price": 3500,
+    "close_price": 3500,
     "currency": "JPY",
     "20_day_average_volume": 2000000,
     "30_day_average_volume": 2100000
