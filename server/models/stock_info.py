@@ -21,3 +21,5 @@ class StockInfo:
             "day_20_average_volume": self.day_20_average_volume,
             "day_30_average_volume": self.day_30_average_volume,
         }
+
+

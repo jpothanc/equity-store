@@ -1,6 +1,14 @@
 pip install -r requirements.txt
-pip freeze
+pip uninstall PackageName
+# no prompt
+pip uninstall PackageName -y
+# show package info
+pip show PackageName
+#upgrade package
+pip install --upgrade PackageName==X.Y.Z
+pip install --upgrade requests==2.25.1
 
+pip freeze
 
 python -m venv venv
 .\venv\Scripts\activate

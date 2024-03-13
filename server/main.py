@@ -9,9 +9,15 @@ from config.config_provider import ConfigProvider
 from config.constants import FACTORY_FILE, CONFIG_FILE
 from controllers import error_handlers
 from controllers.equity_controller import eq_ns
+from controllers.equity_exchange_controller import eq_ex_ns
+
 from controllers.health_controller import health_bp
 from imports import EquityService, StockRepositoryDisk, StockRepository, StockRepositoryDB, DatabaseService, DbPostgresService,EncryptionService
 from flask_restx import Api, Resource
+
+
+
+
 def configure(binder):
     try:
         with open(FACTORY_FILE, 'r') as file:
@@ -34,7 +40,7 @@ def create_app():
     return main_app, FlaskInjector(app=main_app, modules=[configure])
 
 app, flask_injector = create_app()
-
+api = Api(app, version='1.0', title='Equity Store API', description='Equity Store API')
 
 def init_logging():
     logging.basicConfig(
@@ -45,8 +51,8 @@ def init_logging():
             logging.StreamHandler()])
 
 def register_blueprints_and_api():
-    api = Api(app, version='1.0', title='Equity Store API', description='Equity Store API')
     api.add_namespace(eq_ns)
+    api.add_namespace(eq_ex_ns)
     app.register_blueprint(health_bp)
 
 def register_error_handlers():
@@ -56,6 +62,7 @@ def register_error_handlers():
 @app.before_request
 def before_request():
     g.flask_injector = flask_injector
+    g.api = api
 
 
 if __name__ == '__main__':
