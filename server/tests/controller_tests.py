@@ -28,7 +28,7 @@ class ControllerTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, expected_status)
         if response.status_code == 200:
             data = response.get_json()
-            # self.assertGreater(len(data), 0)
+            self.assertGreater(len(data), 0)
 
 
 if __name__ == '__main__':
