@@ -1,4 +1,6 @@
 import logging
+import threading
+import time
 
 from injector import inject, Injector
 from config.config_provider import ConfigProvider
@@ -17,6 +19,8 @@ class StockRepositoryDB(StockRepository):
     def load_exchange(self, exchange):
         connection_string =  self.config_provider.get_connection_string(self.config_provider.get("data_source"))
         query = self.config_provider.get("exchange_query").format(exchange = exchange)
+        logging.info(f"load_exchange {exchange} Current thread ID: {threading.current_thread().ident}")
+        start_time = time.time()
         col_names, rows = self.database_service.query(connection_string, query)
 
         stocks = [
@@ -24,7 +28,11 @@ class StockRepositoryDB(StockRepository):
             for row in rows
         ]
         stocks_dict_list = [stock.to_dict() for stock in stocks]
-        logging.info(f"Loaded {exchange} stocks: {len(stocks)}")
+
+        end_time = time.time()
+        elapsed_time = (end_time - start_time) * 1000
+        logging.info(f"Loaded {exchange} stocks: {len(stocks)} in ({elapsed_time:.2f} ms)")
+
         self.cache_exchange[exchange] = stocks_dict_list
         self.index_stocks(stocks_dict_list)
 

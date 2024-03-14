@@ -4,7 +4,7 @@ from flask_restx import Resource
 from models.models import stock_info_model
 from internal.namespaces import eq_ns_namespace
 from internal.parsers import eq_parser
-from services.authenticate import requires_auth
+from services.authentication_service import requires_auth
 from services.equity_service import EquityService
 
 # These namespaces will have to be defined in the same class where the routes are defined
