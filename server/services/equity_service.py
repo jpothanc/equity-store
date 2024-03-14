@@ -2,8 +2,6 @@ from injector import Injector, inject
 
 from config.config_provider import ConfigProvider
 from repository.stock_repository import StockRepository
-from repository.stock_repository_disk import StockRepositoryDisk
-
 
 class EquityService:
     @inject
@@ -14,7 +12,7 @@ class EquityService:
     def load_exchanges(self):
         stock_exchange_list = self.config_provider.get("preload_exchanges").split(",")
         for stock_exchange in stock_exchange_list:
-            print(f"Stock Exchange: {stock_exchange}")
+            print(f"Loading Stock Exchange: {stock_exchange}")
             print(self.stock_repository.load_exchange(stock_exchange))
 
     def get_equity(self, ric_code):

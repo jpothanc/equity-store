@@ -5,7 +5,6 @@ class StockRepository:
     def __init__(self):
         self.cache_exchange = {}
         self.cache_stock_code = {}
-        pass
 
     @abstractmethod
     def load_exchange(self, exchange):

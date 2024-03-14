@@ -7,15 +7,14 @@ from services.encryption_service import EncryptionService
 
 class ConfigProvider:
     @inject
-    def __init__(self,injector : Injector, config_file = "config.json"):
-        self.config_file = config_file
+    def __init__(self,injector : Injector):
         self.encrypt_service = injector.get(EncryptionService)
-        self.data = self.load()
+        self.data = None
 
-    def load(self):
-        with open(self.config_file, 'r') as file:
-            data = json.load(file)
-        return data
+    def load(self, config_file):
+        with open(config_file, 'r') as file:
+            self.data = json.load(file)
+
 
     def get(self, key):
         return self.data[key] if key in self.data else None

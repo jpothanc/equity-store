@@ -1,6 +1,9 @@
 
 from flask_restx import fields, Model
 
+"""
+This class is used to define the model for the stock info which is required for swagger documentation
+"""
 def stock_info_model(namespace):
     return namespace.model('StockInfo', {
         'stock_name': fields.String(required=True, description='The name of the stock'),

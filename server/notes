@@ -14,6 +14,8 @@ python -m venv venv
 .\venv\Scripts\activate
 
 
+pip install Flask pytest
+
 DROP TABLE equity;
 CREATE TABLE equity (
     stock_name VARCHAR(255) NOT NULL,
@@ -51,3 +53,12 @@ INSERT INTO equity (stock_name, primary_exchange, product_code, lot_size, last_c
 ('Fast Retailing Co Ltd', 'TSE', '9983.T', 100, 88000, 'JPY', 500000, 550000),
 ('Tokyo Electron Ltd', 'TSE', '8035.T', 100, 42000, 'JPY', 1500000, 1600000),
 ('Recruit Holdings Co Ltd', 'TSE', '6098.T', 100, 3500, 'JPY', 2000000, 2100000);
+
+
+from repository.stock_repository import StockRepository
+from repository.stock_repository_disk import StockRepositoryDisk
+from repository.stock_repository_db import StockRepositoryDB
+from services.equity_service import EquityService
+from services.database_service import DatabaseService
+from services.db_postgres_service import DbPostgresService
+from services.encryption_service import EncryptionService

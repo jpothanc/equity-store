@@ -1,7 +1,8 @@
-from flask_restx import Resource, Namespace
+from flask import g
+from flask_restx import Resource
 
-from models.namespaces import eq_ns_namespace
-from models.parsers import eq_exchange_parser
+from internal.namespaces import eq_ns_namespace
+from internal.parsers import eq_exchange_parser
 from services.authenticate import requires_auth
 from services.equity_service import EquityService
 
@@ -19,14 +20,14 @@ class EquityExchange(Resource):
         """Get equity Exchange"""
         try:
             args = eq_exchange_parser.parse_args()
-            exchange = args.get('exchange')
+            exchange = args.get('exchange_code')
             if not exchange:
                 return {"message": "Exchange is required."}, 400
             eq_service = g.flask_injector.injector.get(EquityService)
-            exchange =  eq_service.get_exchange(exchange), 201
+            exchange =  eq_service.get_exchange(exchange)
             if exchange is None:
                 return {"message": "Exchange not found"}, 404
-            return exchange
+            return exchange, 200
         except Exception as e:
             return {"message": "Internal Server Error", "error": str(e)}, 500
 

@@ -1,11 +1,12 @@
 import json
+import logging
+
 from injector import inject, Injector
 from config.config_provider import ConfigProvider
 from repository.stock_repository import StockRepository
 
 
 class StockRepositoryDisk(StockRepository):
-
     @inject
     def __init__(self, injector: Injector):
         super().__init__()
@@ -18,7 +19,7 @@ class StockRepositoryDisk(StockRepository):
                 stocks = json.load(file)
                 self.cache_exchange[exchange] = stocks
                 self.index_stocks(stocks)
-                print(f"Path: loaded - stocks: {stocks}")
+                logging.info(f"Loaded {exchange} stocks: {len(stocks)}")
 
         except FileNotFoundError:
             return f"File not found: {file_path}"

@@ -1,5 +1,8 @@
 from flask import jsonify
 
+"""
+Global error handlers
+"""
 def not_found(error):
     return jsonify({"error": "Resource not found"}), 404
 

@@ -1,3 +1,5 @@
+import logging
+
 from injector import inject, Injector
 from config.config_provider import ConfigProvider
 from models.stock_info import StockInfo
@@ -22,13 +24,12 @@ class StockRepositoryDB(StockRepository):
             for row in rows
         ]
         stocks_dict_list = [stock.to_dict() for stock in stocks]
-        print(stocks_dict_list)
+        logging.info(f"Loaded {exchange} stocks: {len(stocks)}")
         self.cache_exchange[exchange] = stocks_dict_list
         self.index_stocks(stocks_dict_list)
 
     def index_stocks(self, stocks):
         for stock in stocks:
-            print(f"stock: {stock}")
             self.cache_stock_code[stock["product_code"]] = stock
 
     def get_exchange(self, exchange):
