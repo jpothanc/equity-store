@@ -15,6 +15,34 @@ Dependency Injection (DI) is a fundamental design pattern in software engineerin
 #### DI Configuration from `factory.json`
 
 Our application relies on a configuration file named `factory.json` to define the bindings for various services within the microservice. This JSON file specifies the relationships between interfaces (or service contracts) and their concrete implementations, along with their lifecycle scopes. Here's a brief overview of each configuration element:
+```json
+{
+  "bindings": [
+     {
+      "service": "EncryptionService",
+      "implementation": "EncryptionService",
+      "scope": "singleton"
+    },
+    {
+      "service": "EquityService",
+      "implementation": "EquityService",
+      "scope": "singleton"
+    },
+    {
+      "service": "DatabaseService",
+      "implementation": "DbPostgresService",
+      "scope": "request"
+    },
+    {
+      "service": "StockRepository",
+      "implementation": "StockRepositoryDB",
+      "scope": "singleton"
+    }
+  ]
+}
+
+
+```
 
 - **Service**: Represents the interface or abstract class that a component in the application depends on. It defines the contract that the implementation class must adhere to.
 - **Implementation**: The concrete class that provides the actual functionality behind the service interface. It's this implementation that will be injected where the service interface is required.
