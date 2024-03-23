@@ -98,6 +98,7 @@ exchange_info = equity_service.get_exchange('NASDAQ')
 - Flask-HTTPAuth==4.8.0
 - Flask-Injector==0.15.0
 - flask-restx==1.3.0
+- flasgger==0.9.7.1
 - injector==0.21.0: A lightweight dependency injection framework for Python.
 
 ## Configuration
@@ -111,9 +112,3 @@ The system is configured through a JSON file named `config.json`. It contains th
 - `exchange_query`: The SQL query to use for loading stock information from the database.
 - `data_sources`: A dictionary of data sources. Each data source is a dictionary containing connection details for a database.
 
-## Note
-
-Please ensure that the necessary Python packages are installed and the configuration file is properly set up before running the application.
-```
-
-This `README.md` file provides an overview of the project, describes the main modules, explains how to use the system, lists the dependencies, and provides configuration details.
