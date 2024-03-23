@@ -93,8 +93,12 @@ exchange_info = equity_service.get_exchange('NASDAQ')
 ## Dependencies
 
 - Python
-- pip
-- injector: A lightweight dependency injection framework for Python.
+- Flask==3.0.2
+- Flask-Cors==3.0.10
+- Flask-HTTPAuth==4.8.0
+- Flask-Injector==0.15.0
+- flask-restx==1.3.0
+- injector==0.21.0: A lightweight dependency injection framework for Python.
 
 ## Configuration
 
