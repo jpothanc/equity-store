@@ -5,6 +5,7 @@ from injector import Module, singleton
 
 from config.config_provider import ConfigProvider
 from internal.constants import FACTORY_FILE, CONFIG_FILE
+from internal.helper import get_env_factory_file
 
 # region registering the services
 from repository.stock_repository import StockRepository
@@ -19,7 +20,7 @@ from services.encryption_service import EncryptionService
 """
 This class is used to bind the services to their implementations and scopes
 Steps
-1. Add the bindings to factory.json
+1. Add the bindings to factory.development.json
 2. Make sure the dependencies are added in the order of their dependencies
 3. import the services and their implementations
 """
@@ -27,7 +28,8 @@ class DependencyInjectionModules(Module):
     def configure(self, binder):
         try:
 
-            with open(FACTORY_FILE, 'r') as file:
+            file_path = get_env_factory_file()
+            with open(file_path, 'r') as file:
                 factory_config = json.load(file)
 
             for binding in factory_config.get('bindings'):

@@ -11,7 +11,7 @@ eq_api = Api(eq_app, version='1.0', title='Equity Store API', description='Equit
 flask_injector  = FlaskInjector(app=eq_app, modules=[DependencyInjectionModules()])
 
 config_provider = flask_injector.injector.get(ConfigProvider)
-config_provider.load('config.json')
+config_provider.load()
 init_app(eq_app, eq_api,log_path = config_provider.get('log_path'))
 
 equity_service = flask_injector.injector.get(EquityService)

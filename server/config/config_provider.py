@@ -1,7 +1,10 @@
 import json
+import logging
+import os
 
 from injector import Injector, inject
 
+from internal.helper import get_env_config_file
 from services.encryption_service import EncryptionService
 
 
@@ -11,10 +14,11 @@ class ConfigProvider:
         self.encrypt_service = injector.get(EncryptionService)
         self.data = None
 
-    def load(self, config_file):
-        with open(config_file, 'r') as file:
+    def load(self):
+        file_path  = get_env_config_file()
+        logging.info(f"Loading config file: {file_path}")
+        with open(file_path, 'r') as file:
             self.data = json.load(file)
-
 
     def get(self, key):
         return self.data[key] if key in self.data else None
