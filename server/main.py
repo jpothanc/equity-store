@@ -7,7 +7,7 @@ from flask_restx import Api
 from services.equity_service import EquityService
 
 eq_app = Flask(__name__, static_folder ='static/dist', template_folder='static/dist')
-eq_api = Api(eq_app, version='1.0', title='Equity Store API', description='Equity Store API')
+eq_api = Api(eq_app, version='1.0', title='Equity Store API', description='Equity Store API', prefix='/api/v1')
 flask_injector  = FlaskInjector(app=eq_app, modules=[DependencyInjectionModules()])
 
 config_provider = flask_injector.injector.get(ConfigProvider)
